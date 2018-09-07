@@ -81,7 +81,31 @@ router
 ### 组件目录
 1. Home
    * componentes/header.vue
+   * componentes/swiper.vue
    * componentes/search.vue  
 2. List
    * header.vue
    * search.vue 
+### 组件介绍
+1. HomeSwiper
+```
+安装： npm i vue-awesome-swiper@2.6.7 --save
+引入VueAwesomeSwiper:
+ import "xxx"
+ import 'swiper/dist/css/swiper.css'
+ Vue.use(VueAwesomeSwiper)
+```
+实现宽高比自适应（解决低速网络下的图片刷新bug）
+```
+  <div class="wrapper"></div>
+  .wrapper
+    overflow: hidden
+    width: 100%
+    height: 0
+    padding-bottom: 实际宽度/实际高度
+```
+设置swiper-pagination的颜色
+```
+  .wrapper>>>.swiper-pagination-bullet
+    background: #fff!important
+```
