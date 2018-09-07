@@ -80,8 +80,9 @@ router
 ```
 ### 组件目录
 1. Home
-   * componentes/header.vue
-   * componentes/swiper.vue
+   * componentes/Header.vue
+   * componentes/Swiper.vue
+   * componentes/Icon.vue  
    * componentes/search.vue  
 2. List
    * header.vue
@@ -108,4 +109,24 @@ router
 ```
   .wrapper>>>.swiper-pagination-bullet
     background: #fff!important
+```
+2. HomeIcon
+Icon页面切换逻辑实现
+```javascript
+  computed:{
+    pages(){
+      const pages = []
+      this.iconList.forEach( (item,index)=>{
+        const page = Math.floor(index/8) //数据的下标大于7的时候page=1
+        if( !pages[page] ){
+          pages[page]=[]
+        }
+        pages[page].push( item )
+      })
+      return pages
+    }
+  }
+
+  <swiper-slide v-for="(page, index) in pages" :key="index">
+//当页面的数据超过8个icon的时候就会切换到下一页面。
 ```
