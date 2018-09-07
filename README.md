@@ -83,7 +83,7 @@ router
    * componentes/Header.vue
    * componentes/Swiper.vue
    * componentes/Icon.vue  
-   * componentes/search.vue  
+   * componentes/Recommend.vue  
 2. List
    * header.vue
    * search.vue 
