@@ -86,9 +86,9 @@ router
    * componente/Icon.vue  
    * componente/Recommend.vue  
    * components/Weekend.vue
-2. List
-   * header.vue
-   * search.vue 
+2. City
+   * components/header.vue
+   * components/search.vue 
 3. axios发送数据请求
 ### 组件介绍
 1. HomeSwiper
@@ -141,7 +141,9 @@ Icon页面切换逻辑实现
        .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc(res){
-      console.log(res)
+      const data = res.data
+      this.city = data.city
+      this.swiperList = data.swiperList
     }
   },
   mounted(){
@@ -166,5 +168,19 @@ proxyTable: {
 主要是用户访问的过程中，Vue自动帮我们做一个开发环境的转发.<br>
 使用ajax获取到的数据传递从父组件传递给子组件:
 ```
+父组件传递：
+  <home-header :city="city" ></home-header>
   
+  data(){
+    return{
+      city: ''
+    },
+  }
+子组件接收:
+  props:{
+    city: Array
+  }
+```
+4. CitySearch
+```
 ```

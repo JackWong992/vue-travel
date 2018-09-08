@@ -8,9 +8,12 @@
         <span class="iconfont icon-xiaoxi-"></span>
         输入城市/景点/游玩主题
       </div>
-      <div class="header-right">
+      <router-link to="/City">
+        <div class="header-right">
         {{this.city}}<span class="iconfont icon-jiantouxia"></span>
-      </div>
+        </div>
+      </router-link>
+      
     </div>
   </div>
 </template>
@@ -50,6 +53,7 @@
       margin-left: .15rem
       width: 1.24rem
       float: right
+      color: #fff
       .icon-jiantouxia
        margin-left: .12rem
 </style>
