@@ -90,6 +90,8 @@ router
    * components/header.vue
    * components/search.vue 
 3. axios发送数据请求
+4. Detail
+   * component/Banner.vue
 ### 组件介绍
 1. HomeSwiper
 ```
@@ -183,4 +185,52 @@ proxyTable: {
 ```
 4. CitySearch
 ```
+  <div class="search">
+    <input type="text" class="search-input"
+    placeholder="输入城市名或者拼音">
+  </div>
+```
+5. CityList
+使用better-scroll进行滚动
+```
+  npm i better-scroll --save
+```
+```javascript
+使用：
+  最外层要有<div>
+  <div class="list" ref="wrapper">
+引入：
+  import BScroll from 'better-scroll'
+定义：
+mounted(){
+      this.scroll = new BScroll(this.$refs.wrapper)
+    }
+```
+## 兄弟组件联动
+1. 子(弟弟)组件先把数据传递给父组件
+2. 父组件再将数据传递给需要的(兄弟)兄弟组件
+```
+子组件传递给父组件：(向外触发$emit事件)
+  @click="handleLetterClick"
+  handleLetterClick(e){
+    this.$emit("change" , e.target.innerHTML )
+  }
+//子组件向外触犯一个change事件
+
+父组件接收：
+  @change=" handleLetterChange"
+
+methods: {
+  handleLetterChange(letter){
+    console.log(letter)  //打印：a b c d
+  }
+}
+
+父组件再向子(哥哥)组件传递输出
+<city :letter="letter">
+
+哥哥组件接收：
+props: {
+  letter: String
+}
 ```
