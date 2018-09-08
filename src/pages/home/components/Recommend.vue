@@ -2,7 +2,7 @@
   <div>
     <div class="recommend-title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item in recommendList"
+      <li class="item border-bottom" v-for="item in list"
                 :key="item.id"
       >
         <img :src="item.imgUrl"  class="item-img">
@@ -19,25 +19,11 @@
 <script>
   export default {
     name: "HomeRecommend",
+    props: {
+      list: Array
+    },
     data(){
-      return {
-        recommendList: [{
-        id: '001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1609/80/8092254b7f5f016ea3.water.jpg_200x200_cd798d39.jpg',
-        title: "宋豇豆角",
-        desc: "登录客户端客服"
-      },{
-        id: '002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1609/80/8092254b7f5f016ea3.water.jpg_200x200_cd798d39.jpg',
-        title: "宋豇豆角",
-        desc: "登录客户端客服"
-      },{
-        id: '003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1609/80/8092254b7f5f016ea3.water.jpg_200x200_cd798d39.jpg',
-        title: "宋豇豆角",
-        desc: "登录客户端客服"
-      }]
-      }
+      return {}
     }
   }
   

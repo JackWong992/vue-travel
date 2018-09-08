@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) in pages" :key="index">
           <div class="icon" v-for="item in page"  :key="item.id">
             <div class="icon-img" >
@@ -17,52 +17,20 @@
 <script>
 export default {
   name: "HomeIcon",
+  props: {
+    list: Array
+  },
   data() {
     return {
-     iconList: [
-      {
-       desc: "hello",
-       id: '001',
-       imgUrl: "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png"
-     },{
-       desc: "hi",
-       id: '002',
-       imgUrl: "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png"
-     },{
-       desc: "hehe",
-       id: "003",
-       imgUrl: "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png"
-     },{
-       desc: "hehe",
-       id: "004",
-       imgUrl: "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png"
-     },{
-       desc: "hehe",
-       id: "005",
-       imgUrl: "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png"
-     },{
-       desc: "hehe",
-       id: "006",
-       imgUrl: "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png"
-     },{
-       desc: "hehe",
-       id: "007",
-       imgUrl: "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png"
-     },{
-       desc: "hehe-1",
-       id: "008",
-       imgUrl: "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png"
-     },{
-       desc: "hehe-2",
-       id: "009",
-       imgUrl: "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png"
-     }] 
+       swiperOption: {
+         autoplay: false
+      }
     }
   },
   computed:{
     pages(){
       const pages = []
-      this.iconList.forEach( (item,index)=>{
+      this.list.forEach( (item,index)=>{
         const page = Math.floor(index/8) //数据的下标大于7的时候page=1
         if( !pages[page] ){
           pages[page]=[]

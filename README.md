@@ -7,6 +7,7 @@
   node
   vscode
   vue-cli
+  axios
 ```
 项目文件目录：
 > README.md 说明文档 <br>
@@ -80,13 +81,15 @@ router
 ```
 ### 组件目录
 1. Home
-   * componentes/Header.vue
-   * componentes/Swiper.vue
-   * componentes/Icon.vue  
-   * componentes/Recommend.vue  
+   * componente/Header.vue
+   * componente/Swiper.vue
+   * componente/Icon.vue  
+   * componente/Recommend.vue  
+   * components/Weekend.vue
 2. List
    * header.vue
    * search.vue 
+3. axios发送数据请求
 ### 组件介绍
 1. HomeSwiper
 ```
@@ -129,4 +132,39 @@ Icon页面切换逻辑实现
 
   <swiper-slide v-for="(page, index) in pages" :key="index">
 //当页面的数据超过8个icon的时候就会切换到下一页面。
+```
+3. axios发送数据请求
+```javascript
+   methods: {
+    getHomeInfo(){
+      axios.get('/api/index.json')
+       .then(this.getHomeInfoSucc)
+    },
+    getHomeInfoSucc(res){
+      console.log(res)
+    }
+  },
+  mounted(){
+    this.getHomeInfo()
+  }
+//发送数据请求
+```
+把`/static/mock/index.json`替换成`/api/index.json`<br>
+使用proxy配置项✅：
+```
+config>index.js
+
+proxyTable: {
+  '/api': {
+    target: "http://localhost:8080",
+    pathRewrite: {
+      '^api':'/static/mock'
+    }
+  }
+}
+```
+主要是用户访问的过程中，Vue自动帮我们做一个开发环境的转发.<br>
+使用ajax获取到的数据传递从父组件传递给子组件:
+```
+  
 ```
