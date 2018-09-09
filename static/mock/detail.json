@@ -1,0 +1,25 @@
+{
+  "ret": true,
+  "data": {
+    "sightName": "上海杜莎夫人蜡像馆(AAAA景区)",
+    "bannerImg": "http://img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_600x330_1be7ea5e.jpg",
+    "gallaryImgs": ["http://img1.qunarzz.com/sight/p0/1704/74/74a3ba6334dd7cfa3.img.jpg_r_800x800_c2612186.jpg", "http://img1.qunarzz.com/sight/p0/1704/f2/f2d4f3d1e1e18c9ba3.img.jpg_r_800x800_42e52046.jpg","http://img1.qunarzz.com/sight/p0/1704/15/15946c69f4656252a3.img.jpg_r_800x800_cfd81670.jpg"],
+    "categoryList": [{
+        "title": "成人票",
+        "children": [{
+          "title": "成人三馆联票",
+          "children": [{
+            "title": "成人三馆联票 - 某一连锁店销售"
+          }]
+        },{
+          "title": "成人五馆联票"
+        }]
+      }, {
+        "title": "学生票"
+      }, {
+        "title": "儿童票"
+      }, {
+        "title": "特惠票"
+      }]
+  }
+}
