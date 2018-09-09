@@ -7,6 +7,7 @@
     <detail-header></detail-header>
     <div class="content">
       <detail-list :list="list"></detail-list>
+      <detail-recommend></detail-recommend>
     </div>
   </div>
 </template>
@@ -15,13 +16,15 @@
  import DetailBanner from './components/Banner.vue'
  import DetailHeader from './components/Header.vue'
  import DetailList from './components/List.vue'
+ import DetailRecommend from './components/Recommend.vue'
  import axios from 'axios'
   export default {
     name: 'Detail',
     components: {
       DetailBanner: DetailBanner,
       DetailHeader: DetailHeader,
-      DetailList: DetailList
+      DetailList: DetailList,
+      DetailRecommend: DetailRecommend
     },
     data() {
       return {
@@ -60,5 +63,5 @@
 
 <style scoped lang="stylus">
   .content
-    height: 50rem
+    height: 15.5rem
 </style>

@@ -2,6 +2,7 @@
   <div>
     <div class="weekend-title">周末推荐</div>
     <ul>
+      
       <li class="item border-bottom" v-for="item in list"
                 :key="item.id"
       >
