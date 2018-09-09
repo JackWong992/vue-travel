@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     getHomeInfo(){
-      axios.get('/api/index.json')
+      axios.get('https://www.easy-mock.com/mock/5b94e84ddd236325f85bf87a/travel/index')
        .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc(res){
