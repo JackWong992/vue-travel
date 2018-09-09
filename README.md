@@ -234,3 +234,10 @@ props: {
   letter: String
 }
 ```
+解决多页面进入刷新跳转问题：
+```javascript
+router->index.js路由最后加
+  scrollBehavior (to, from , savedPosition){
+    return { x:0 , y: 0 }
+  }
+```

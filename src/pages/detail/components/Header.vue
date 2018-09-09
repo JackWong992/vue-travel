@@ -25,7 +25,6 @@
     },
     methods: {
       handleScroll(){
-        console.log('deactivated...')
         const top = document.documentElement.scrollTop
         if (top > 60) {
           let opacity = top / 140
@@ -72,6 +71,7 @@
     background: $bgColor
     color: #fff
     font-size: .32rem
+    z-index:2
     .header-fixed-back
       position: absolute
       top: 0
