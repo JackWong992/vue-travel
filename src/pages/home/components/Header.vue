@@ -10,7 +10,7 @@
       </div>
       <router-link to="/City">
         <div class="header-right">
-        {{this.city}}<span class="iconfont icon-jiantouxia"></span>
+        {{this.$store.state.city}}<span class="iconfont icon-jiantouxia"></span>
         </div>
       </router-link>
       
@@ -51,9 +51,10 @@
       padding-left: .1rem
     .header-right
       margin-left: .15rem
-      width: 1.24rem
+      min-width: 1.04rem
       float: right
       color: #fff
+      padding: 0 .1rem
       .icon-jiantouxia
        margin-left: .12rem
 </style>

@@ -8,7 +8,9 @@
        v-show="keyword" ref="search">
       <ul>
         <li class="search-item border-bottom"
-        v-for="(item,index) in list" :key="index">{{item.name}}</li>
+        v-for="(item,index) in list" 
+        :key="index"
+        @click="handleCityClick(item.name)">{{item.name}}</li>
         <li class="search-item border-bottom"
           v-show="!this.list.length" >没有找到匹配项</li> 
       </ul>
@@ -49,6 +51,12 @@
           }
           this.list = result
         },100 )
+      }
+    },
+    methods: {
+       handleCityClick(city){
+        this.$store.dispatch( 'changeCity', city )
+        this.$router.push('/')
       }
     },
     mounted(){

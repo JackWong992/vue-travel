@@ -5,14 +5,14 @@
         <div class="title ">当前城市</div>
           <div class="button-list">
             <div class="button-wrapper">
-              <div class="button">北京</div>
+              <div class="button">{{this.$store.state.city}}</div>
             </div>
         </div>
       </div>
       <div class="area border-topbottom">
         <div class="title ">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="item in hot"  :key="item.id">
+          <div class="button-wrapper" v-for="item in hot"  :key="item.id" @click="handleCityClick(item.name)">
             <div class="button">{{item.name}}</div>
           </div>
         </div>
@@ -21,7 +21,7 @@
         <div class="title border-topbottom ">{{key}}</div>
         <div class="item-list">
           <div class="item border-bottom" v-for="innerItem in item"
-          :key="innerItem.id">
+          :key="innerItem.id" @click="handleCityClick(innerItem.name)">
             {{innerItem.name}}
           </div>
         </div>
@@ -38,6 +38,12 @@ import BScroll from 'better-scroll'
       cities: Object,
       hot: Array,
       letter: String
+    },
+    methods: {
+      handleCityClick(city){
+        this.$store.commit( 'changeCity', city )
+        this.$router.push('/')
+      }
     },
     mounted(){
       this.scroll = new BScroll(this.$refs.wrapper)
